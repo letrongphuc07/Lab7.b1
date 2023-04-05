@@ -1,0 +1,78 @@
+package Lab7Bt1;
+public abstract class PhuongTienDiChuyen {
+    protected String loaiPhuongTien;
+    protected HangSanXuat hangSanXuat;
+    public PhuongTienDiChuyen(){}
+
+    public PhuongTienDiChuyen(String loaiPhuongTien, HangSanXuat hangSanXuat) {
+        this.loaiPhuongTien = loaiPhuongTien;
+        this.hangSanXuat = hangSanXuat;
+    }
+    public String layTenHangSanXuat(){
+        return "0";
+    }
+    public void batDau(){}
+    public void tangToc(){}
+    public void dunglai(){}
+    abstract double layVanToc();
+}
+package Lab7Bt1;
+public class MayBay extends PhuongTienDiChuyen {
+    private String loaiNhienLieu;
+    public MayBay(){}
+    public MayBay(String loaiNhienLieu) {
+    this.loaiNhienLieu = loaiNhienLieu;
+    }
+    @Override
+    public double layVanToc(){
+        return 0;
+    }
+    public void catCanh(){}
+    public void haCanh(){}
+}
+package Lab7Bt1;
+public class XeDap extends PhuongTienDiChuyen {
+    public XeDap() {
+    }
+    public XeDap(String loaiPhuongTien, HangSanXuat hangSanXuat) {
+    super(loaiPhuongTien, hangSanXuat);
+    }
+    @Override
+    public double layVanToc(){
+        return 0;
+    }
+}
+package Lab7Bt1;
+public class XeOto extends PhuongTienDiChuyen {
+    private String loaiNhienLieu;
+    public XeOto(){}
+    public XeOto(String loaiNhienLieu) {
+        this.loaiNhienLieu = loaiNhienLieu;
+    }
+    @Override
+    public double layVanToc(){
+        return 0;
+    }
+}
+package Lab7Bt1;
+public class HangSanXuat {
+    private String tenHangSanXuat;
+    private String tenQuocGia;
+    public HangSanXuat(String tenHangSanXuat, String tenQuocGia) {
+        this.tenHangSanXuat = tenHangSanXuat;
+        this.tenQuocGia = tenQuocGia;
+    } 
+}
+package Lab7Bt1;
+public class main {
+    public static void main(String[] args) {
+        MayBay mb= new MayBay();
+        XeOto xo= new XeOto();
+        XeDap xd = new XeDap();
+        mb.haCanh();
+        mb.catCanh();
+        mb.layVanToc();
+        xo.layVanToc();
+        xd.layVanToc();
+    }
+}
